@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.app {
+  @apply w-full h-screen flex items-center justify-center bg-slate-100 font-poppins;
+}
+
+.sub-title {
+  @apply text-sm md:text-base text-gray-500
+}
+
+.card {
+  @apply max-w-[700px] bg-white p-4 md:p-8 rounded-xl shadow-lg flex flex-col gap-4;
+}
+
+.logo {
+  @apply w-20;
+}
+
+.btn {
+  @apply w-full py-2 rounded-md;
+}
