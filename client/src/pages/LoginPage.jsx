@@ -3,14 +3,17 @@ import FInput from "../ui/FInput";
 import FTypography from "../ui/FTypography";
 import FButton from "../ui/FButton";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-
-  console.log(form);
 
   const handleInputChange = (fieldName, value) => {
     setForm((prevForm) => ({
@@ -21,7 +24,16 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  }
+    axios
+      .post("http://localhost:3001/login", form)
+      .then((result) => {
+        console.log(result);
+        if (result.data === "Login Success") {
+          navigate("/home");
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <main>

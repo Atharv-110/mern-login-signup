@@ -13,8 +13,6 @@ const SignupPage = () => {
     password: "",
   });
 
-  // console.log(form);
-
   const handleInputChange = (fieldName, value) => {
     setForm((prevForm) => ({
       ...prevForm,
